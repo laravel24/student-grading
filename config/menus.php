@@ -13,11 +13,12 @@ return [
                 ]
             ],
             [
-                'name' => 'Copy',
-                'url'  => 'copy',
-                'roles' => [
-                    'admin'
-                ]
+                'name' => 'Students',
+                'url'  => 'students'
+            ],
+            [
+                'name' => 'Attendance',
+                'url'  => 'attendance'
             ],
             [
                 'name' => 'Settings',

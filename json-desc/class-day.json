@@ -1,0 +1,18 @@
+{
+    "modelUpper": "ClassDay",
+    "increments": "id",
+    "position": true,
+    "timestamps": true,
+    "fields": [
+        {
+            "name": "date",
+            "type": "date",
+            "label": "Date"
+        },
+        {
+            "name": "type",
+            "type": "string",
+            "label": "Type"
+        }
+    ]
+}

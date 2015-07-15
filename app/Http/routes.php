@@ -19,13 +19,24 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'Admin
         Route::put('/{id}', ['uses' => 'UsersController@update', 'as' => 'admin.users.update']);
     });
 
-    Route::group(['prefix' => 'copy', 'middleware' => 'user-role', 'role' => 'admin'], function () {
-        Route::get('/', ['uses' => 'CopyController@index', 'as' => 'admin.copy.index']);
-        Route::get('/new', ['uses' => 'CopyController@create', 'as' => 'admin.copy.create']);
-        Route::post('/', ['uses' => 'CopyController@store', 'as' => 'admin.copy.store']);
-        Route::get('/profile', ['uses' => 'CopyController@profile', 'as' => 'admin.copy.profile']);
-        Route::get('/{id}', ['uses' => 'CopyController@edit', 'as' => 'admin.copy.edit']);
-        Route::put('/{id}', ['uses' => 'CopyController@update', 'as' => 'admin.copy.update']);
+    Route::group(['prefix' => 'students'], function () {
+        Route::get('/', ['uses' => 'StudentsController@index', 'as' => 'admin.students.index']);
+        Route::get('/new', ['uses' => 'StudentsController@create', 'as' => 'admin.students.create']);
+        Route::post('/', ['uses' => 'StudentsController@store', 'as' => 'admin.students.store']);
+        Route::get('/{id}', ['uses' => 'StudentsController@edit', 'as' => 'admin.students.edit']);
+        Route::put('/{id}', ['uses' => 'StudentsController@update', 'as' => 'admin.students.update']);
+        Route::get('/{id}/up', ['uses' => 'StudentsController@up', 'as' => 'admin.students.up']);
+        Route::get('/{id}/down', ['uses' => 'StudentsController@down', 'as' => 'admin.students.down']);
+    });
+
+    Route::group(['prefix' => 'attendance'], function () {
+        Route::get('/', ['uses' => 'ClassDaysController@index', 'as' => 'admin.class-days.index']);
+        Route::get('/new', ['uses' => 'ClassDaysController@create', 'as' => 'admin.class-days.create']);
+        Route::post('/', ['uses' => 'ClassDaysController@store', 'as' => 'admin.class-days.store']);
+        Route::get('/{id}', ['uses' => 'ClassDaysController@edit', 'as' => 'admin.class-days.edit']);
+        Route::put('/{id}', ['uses' => 'ClassDaysController@update', 'as' => 'admin.class-days.update']);
+        Route::get('/{id}/up', ['uses' => 'ClassDaysController@up', 'as' => 'admin.class-days.up']);
+        Route::get('/{id}/down', ['uses' => 'ClassDaysController@down', 'as' => 'admin.class-days.down']);
     });
 });
 

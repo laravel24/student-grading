@@ -1,0 +1,18 @@
+{
+    "modelUpper": "Student",
+    "increments": "id",
+    "position": true,
+    "timestamps": true,
+    "fields": [
+        {
+            "name": "first_name",
+            "type": "string",
+            "label": "First Name"
+        },
+        {
+            "name": "last_name",
+            "type": "string",
+            "label": "Last Name"
+        }
+    ]
+}
